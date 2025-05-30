@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stringsplit</title>
+  </head>
+  <body>
+    <script>
+      const csvData = "이름,나이,도시\n김철수,25,부산\n박선영,32,대구";
+      const spData = "이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;도시\n김철수 부산\n박선영 대구";
+      document.write("<p><b>csvData</b> ");
+      document.write(csvData + "</p>");
+      const rows = csvData.split("\n");
+      document.write("<p><b>rows 내용</b><br>");
+
+      for (i = 0; i < rows.length; i++) {
+        document.write(rows[i] + "<br>");
+      }
+      document.write("</p>");
+      document.write("<hr>");
+
+      const space = spData.split("\n");
+      for (let j = 0; j < space.length; ++j) {
+        document.write(space[j] + "<br>");
+      }
+    </script>
+  </body>
+</html>

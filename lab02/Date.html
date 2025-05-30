@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>time</title>
+  </head>
+  <body>
+    <h3>페이지 방문 시간이 오전 8시~오후 6시이면 lightskyblue, 그외 시간은 darkblue</h3>
+    <hr />
+    <script>
+      let current = new Date();
+      let hour = current.getHours(); 
+
+      if (hour >= 8 && hour < 18)
+        document.body.style.backgroundColor = "lightskyblue";
+      else
+        document.body.style.backgroundColor = "darkblue";
+
+      document.write("Current time: ");
+      document.write(current.getHours(), ":");
+      document.write(current.getMinutes());
+    </script>
+  </body>
+</html>

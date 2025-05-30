@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>op</title>
+</head>
+
+<body>
+    <h1>별 문자 출력하기</h1>
+    <hr>
+    <script>
+        let input = prompt("정수를 입력하세요");10
+        
+
+        if (input === null) {
+            document.write("입력 오류입니다");
+        } else {
+            let n = Number(input);
+
+            if (isNaN(n)) {
+                document.write("입력 오류입니다.");
+            } else {
+                for (let i = 1; i <= n; i++) {
+                    for (let j = 1; j <= i; j++) {
+                        document.write("*");
+                    }
+                    document.write("<br>");
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

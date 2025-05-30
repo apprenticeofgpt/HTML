@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grades</title>
+  </head>
+  <body>
+    <script>
+      const scores = {
+        김민준: 95,
+        이지은: 82,
+        박서준: 76,
+        최유리: 63,
+        정하윤: 58,
+      };
+      const students = {
+        getGrade: function (name) {
+          const score = scores[name];
+          if (score === undefined) return "학생 없음";
+
+          if (score >= 90) return "A";
+          else if (score >= 80) return "B";
+          else if (score >= 70) return "C";
+          else if (score >= 60) return "D";
+          else return "F";
+        },
+      };
+      for (let name in scores) {
+        let grade = students.getGrade(name);
+        document.write(`이름: ${name}, 점수: ${scores[name]}, 등급: ${grade}<br>`);
+      }
+    </script>
+  </body>
+</html>
