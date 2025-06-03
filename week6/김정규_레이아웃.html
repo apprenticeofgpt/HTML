@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>레이아웃 예제</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width: 900px;
+      height: 600px;
+      margin: 20px auto;
+    }
+
+    header {
+      height: 10%;
+      background-color: #EA4335;
+    }
+
+    nav {
+      height: 10%;
+      background-color: #FF5E00;
+    }
+
+    .content {
+      display: flex;
+      height: 60%;
+    }
+
+    .side {
+      width: 30%;
+      background-color: #4285F4;
+    }
+
+    .main {
+      width: 70%;
+    }
+
+    .section1 {
+      height: 50%;
+      background-color: #34A853;
+    }
+
+    .section2 {
+      height: 50%;
+      background-color: #FBBC05;
+    }
+
+    footer {
+      height: 10%;
+      background-color: #8A8D92;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header></header>
+    <nav></nav>
+    <div class="content">
+      <div class="side"></div>
+      <div class="main">
+        <div class="section1"></div>
+        <div class="section2"></div>
+      </div>
+    </div>
+    <footer></footer>
+  </div>
+</body>
+</html>
