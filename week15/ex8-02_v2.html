@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML DOM 트리</title>
+  </head>
+  <body>
+    <h3 id="h3">DOM 객체 p의 프로퍼티, 스타일, 이벤트 리스너</h3>
+    <hr />
+    <p id="firstP" style="color: blue; background: yellow" onclick="this.style.color='teal'">
+      이것은
+      <span style="color: red" id="mySpan">문장입니다.</span>
+    </p>
+    <button onclick="changeStyle()">스타일 변경</button>
+    <script>
+      let p = document.getElementById("firstP");
+      // span을 유지하면서 내용 변경
+      p.innerHTML = '나의 강아지(<span id="mySpan"></span><img src="/media/puppy.png" />)입니다.';
+
+      function changeStyle() {
+        const span = document.getElementById("mySpan");
+        if (span) {
+          span.style.backgroundColor = "green";
+          span.style.display = "block";
+          span.style.border = "3px dotted black";
+          span.style.fontSize = "30px";
+        } else {
+          alert("span 요소가 없습니다.");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 30px;
+    }
+    #todoSection {
+      display: none;
+      margin-top: 20px;
+    }
+    #todoList li {
+      margin: 5px 0;
+    }
+    .deleteBtn {
+      margin-left: 10px;
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- TodoList 버튼 -->
+  <button id="todoBtn" onclick="toggleTodo()">TodoList</button>
+
+  <!-- 오늘 할 일 섹션 -->
+  <div id="todoSection">
+    <h2>오늘 할 일</h2>
+    <input type="text" id="todoInput" placeholder="할 일을 입력하세요" />
+    <button onclick="addTodo()">추가</button>
+    <ul id="todoList"></ul>
+  </div>
+
+  <script>
+    function toggleTodo() {
+      // 버튼 숨기기
+      document.getElementById("todoBtn").style.display = "none";
+      // 할 일 섹션 보이기
+      document.getElementById("todoSection").style.display = "block";
+    }
+
+    function addTodo() {
+      const input = document.getElementById("todoInput");
+      const text = input.value.trim();
+      if (text === "") {
+        alert("할 일을 입력하세요.");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = text;
+
+      const btn = document.createElement("button");
+      btn.textContent = "삭제";
+      btn.className = "deleteBtn";
+      btn.onclick = function () {
+        li.remove();
+      };
+
+      li.appendChild(btn);
+      document.getElementById("todoList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

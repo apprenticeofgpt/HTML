@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>좋아요 카운터</title>
+  <style>
+    #counter {
+      font-size: 1.5em;
+      margin-top: 10px;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>좋아요 버튼을 눌러보세요!</h2>
+  <button id="likeBtn">좋아요</button>
+  <p id="counter">좋아요: 0</p>
+
+  <script>
+    const likeBtn = document.getElementById("likeBtn");
+    const counter = document.getElementById("counter");
+    let count = 0;
+
+    likeBtn.addEventListener("click", function () {
+      count++;
+      counter.innerText = `좋아요: ${count}`;
+    });
+  </script>
+<!--이 코드에서 좋와요를 1번만 누를 수 있게 변경해 보세요-->
+</body>
+</html>

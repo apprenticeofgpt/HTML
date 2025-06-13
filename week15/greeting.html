@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>인사말 출력</title>
+  <style>
+    #greeting {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>이름 입력하고 클릭하면 인사말 출력</h2>
+  <input type="text" id="name" placeholder="이름 입력" />
+  <button id="greetBtn">인사하기</button>
+  <p id="greeting"></p>
+
+  <script>
+    // 요소 선택
+    const nameInput = document.getElementById("name");
+    const greetBtn = document.getElementById("greetBtn");
+    const greeting = document.getElementById("greeting");
+
+    // onclick 이벤트 연결
+    greetBtn.addEventListener("click", function () {
+      // 함수 선언
+      const name = nameInput.value.trim(); // 입력된 이름 가져오기
+
+      if (name === "") {
+        alert("이름을 입력해 주세요!");
+        return;
+      }
+
+      // 텍스트 내용 변경
+      greeting.innerText = `안녕하세요, ${name}님! 반갑습니다^^`;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>과일 설명 보기</title>
+  <style>
+    .fruit-image {
+      width: 100px;
+      height: 100px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    #description {
+      margin-top: 20px;
+      font-weight: bold;
+      color: brown;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 과일 이미지 목록 -->
+  <img src="/media/apples.png" alt="사과 그림" class="fruit-image" onclick="showDescription('apples')">
+  <img src="/media/banana.png" alt="바나나 그림" class="fruit-image" onclick="showDescription('banana')">
+  <img src="/media/orange.png" alt="오렌지 그림" class="fruit-image" onclick="showDescription('orange')">
+  <img src="/media/fig.png" alt="무화과 그림" class="fruit-image" onclick="showDescription('figs')">
+
+  <!-- 설명 출력 영역 -->
+  <div id="description"></div>
+
+  <script>
+    function showDescription(fruit) {
+      let message = "";
+      switch (fruit) {
+        case 'apples':
+          message = "신선한 사과입니다. 건강에 좋아요.";
+          break;
+        case 'banana':
+          message = "잘 익은 바나나입니다. 에너지가 넘쳐요.";
+          break;
+        case 'orange':
+          message = "상큼한 오렌지입니다. 주스로 마셔도 좋아요.";
+          break;
+        case 'figs':
+          message = "달콤한 무화과입니다. 과육이 부드러워요.";
+          break;
+        default:
+          message = "설명 없는 과일입니다.";
+      }
+
+      alert(message); // 팝업
+      document.getElementById("description").innerText = message; // 아래에 표시
+    }
+  </script>
+
+</body>
+</html>
